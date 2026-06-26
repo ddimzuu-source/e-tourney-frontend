@@ -4,17 +4,17 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import axios from 'axios';
 
-import LoginPage              from './components/LoginPage';
-import ETourneyDashboard      from './components/ETourneyDashboard';
-import TournamentsPage        from './components/TournamentsPage';
-import TeamsPage              from './components/TeamsPage';
-import PaymentsPage           from './components/PaymentsPage';
-import UsersPage              from './components/UsersPage';
-import SettingsPage           from './components/SettingsPage';
-import UserDashboard          from './components/UserDashboard';
-import HomePage               from './components/HomePage';
-import RegisterPage           from './components/RegisterPage';
-import TournamentBracketPage  from './components/TournamentBracketPage';
+import LoginPage              from '../components/LoginPage';
+import ETourneyDashboard      from '../components/ETourneyDashboard';
+import TournamentsPage        from '../components/TournamentsPage';
+import TeamsPage              from '../components/TeamsPage';
+import PaymentsPage           from '../components/PaymentsPage';
+import UsersPage              from '../components/UsersPage';
+import SettingsPage           from '../components/SettingsPage';
+import UserDashboard          from '../components/UserDashboard';
+import HomePage               from '../components/HomePage';
+import RegisterPage           from '../components/RegisterPage';
+import TournamentBracketPage  from '../components/TournamentBracketPage';
 
 axios.defaults.baseURL = import.meta.env.VITE_API_URL ?? "http://127.0.0.1:8000/api";
 const token = localStorage.getItem('auth_token');
