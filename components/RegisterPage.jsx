@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import axios from 'axios';
+// Menggunakan instance api kustom dari api.js lu, bukan axios mentah
+import api from '../api'; 
 
 export default function RegisterPage() {
     const [formData, setFormData] = useState({ name: '', email: '', password: '' });
@@ -9,8 +10,8 @@ export default function RegisterPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            // Asumsi endpoint register sudah lu buat di Laravel
-            await axios.post('/register', formData);
+            // Otomatis menembak ke https://...ngrok-free.dev/api/register dengan header skip warning
+            await api.post('/register', formData);
             alert("Registrasi berhasil! Silakan login.");
             navigate('/login');
         } catch (err) {
