@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-// Menggunakan instance api kustom dari api.js lu, bukan axios mentah
-import api from './api';
+import axios from 'axios'; // Pakai axios mentah bawaan library
 
 export default function RegisterPage() {
     const [formData, setFormData] = useState({ name: '', email: '', password: '' });
@@ -10,8 +9,14 @@ export default function RegisterPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            // Otomatis menembak ke https://...ngrok-free.dev/api/register dengan header skip warning
-            await api.post('/register', formData);
+            // Dipaksa langsung nembak ke URL Ngrok + /api/register secara manual
+            await axios.post('https://shrewdly-hastily-curry.ngrok-free.dev/api/register', formData, {
+                headers: {
+                    'ngrok-skip-browser-warning': 'any-value',
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            });
             alert("Registrasi berhasil! Silakan login.");
             navigate('/login');
         } catch (err) {
