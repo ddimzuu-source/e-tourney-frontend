@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 // Menggunakan instance api kustom dari api.js lu, bukan axios mentah
-import api from '../api'; 
+import api from './api';
 
 export default function RegisterPage() {
     const [formData, setFormData] = useState({ name: '', email: '', password: '' });
