@@ -3,7 +3,7 @@ import axios from "axios"; // 1. Pastikan axios di-import di sini
 // ─── Base URL ─────────────────────────────────────────────────────────────────
 // Saat development  → http://127.0.0.1:8000/api
 // Saat production   → URL backend Railway kamu (set di .env)
-export const API_BASE = import.meta.env.VITE_API_URL ?? "http://127.0.0.1:8000/api";
+export const API_BASE = import.meta.env.VITE_API_URL;
 
 // ─── Axios instance dengan auth header otomatis ───────────────────────────────
 const api = axios.create({
