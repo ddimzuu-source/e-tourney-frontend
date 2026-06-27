@@ -7,11 +7,12 @@ export const API_BASE = import.meta.env.VITE_API_URL;
 
 // ─── Axios instance dengan auth header otomatis ───────────────────────────────
 const api = axios.create({
-  baseURL: API_BASE,
-  headers: {
-    "Content-Type": "application/json",
-    Accept: "application/json",
-  },
+    baseURL: API_BASE,
+    headers: {
+        "ngrok-skip-browser-warning": "any-value", // WAJIB ADA
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+    },
 });
 
 // Inject token dari localStorage ke setiap request
